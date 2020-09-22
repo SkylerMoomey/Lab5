@@ -1,0 +1,50 @@
+#task 2
+
+#Dr. Stewart's sampling function
+## sampling function
+# iter = iterations, n=sample size
+# set default values
+mybin=function(iter=100,n=10, p=0.5){ 
+  # make a matrix to hold the samples
+  #initially filled with NA's
+  sam.mat=matrix(NA,nr=n,nc=iter, byrow=TRUE)
+  #Make a vector to hold the number of successes in each trial
+  succ=c()
+  for( i in 1:iter){
+    #Fill each column with a new sample
+    sam.mat[,i]=sample(c(1,0),n,replace=TRUE, prob=c(p,1-p))
+    #Calculate a statistic from the sample (this case it is the sum)
+    succ[i]=sum(sam.mat[,i])
+  }
+  #Make a table of successes
+  succ.tab=table(factor(succ,levels=0:n))
+  #Make a barplot of the proportions
+  barplot(succ.tab/(iter), col=rainbow(n+1), main="Binomial simulation", xlab="Number of successes")
+  succ.tab/iter
+}
+
+mybin(n=10, p=0.7)
+mybin(iter=200, n=10, p=0.7)
+mybin(iter=500, p=0.7)
+mybin(iter=1000, p=0.7)
+mybin(iter=10000, p=0.7)
+
+
+#verify values for table with 10000 iterations
+
+dbinom(x=0, size=10, prob=0.7)
+dbinom(x=1, size=10, prob=0.7)
+dbinom(x=2, size=10, prob=0.7)
+dbinom(x=3, size=10, prob=0.7)
+dbinom(x=4, size=10, prob=0.7)
+dbinom(x=5, size=10, prob=0.7)
+dbinom(x=6, size=10, prob=0.7)
+dbinom(x=7, size=10, prob=0.7)
+dbinom(x=8, size=10, prob=0.7)
+dbinom(x=9, size=10, prob=0.7)
+dbinom(x=10, size=10, prob=0.7)
+
+##They are all approximately equal relative frequencies to mybin simulation
+
+
+
