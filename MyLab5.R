@@ -100,3 +100,5 @@ dhyper(2, 12, 8, 5)
 dhyper(3, 12, 8, 5)
 dhyper(4, 12, 8, 5)
 dhyper(5, 12, 8, 5)
+
+?dnbinom
