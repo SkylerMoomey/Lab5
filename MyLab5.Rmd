@@ -179,3 +179,11 @@ pbinom(8, size=15, prob=0.4)
 ### Results
 ${8\choose4} = 70\\ P(Y > 4), Y \sim Pois(\lambda=2) \approx 0.1428765\\ P(Y=10), Y\sim NegBin(p=0.4, r = 3) \approx 0.6449725\\$
 $P(Y \leq 3), Y \sim Bin(n=15, p=0.4) \approx 0.9049526$
+
+## Task 6
+```{r}
+library(MATH4753moom0002)
+
+MATH4753moom0002::mybin(10000, n=10, p=0.5)
+```
+
