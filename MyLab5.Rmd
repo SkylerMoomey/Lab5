@@ -161,7 +161,7 @@ Sys.sleep(time)
 }
 
 #function call
-mysample(n=1000, iter=30, time=1)
+mysample(n=1000, iter=1, time=1)
 ```
 
 Each element should have an equal probability of being drawn, and we see that this is generally true.
